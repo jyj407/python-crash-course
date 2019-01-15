@@ -1,0 +1,11 @@
+countries = ['China', 'USA', 'Canada', 'England', 'Brazil']
+print(countries)
+sorted_countries = sorted(countries)
+print(sorted_countries)
+print(countries)
+num_of_countries = len(countries)
+print(num_of_countries)
+sorted_countries_reverse_order = sorted(countries, reverse=True)
+print(sorted_countries_reverse_order)
+countries.sort()
+print(countries)
