@@ -1,4 +1,5 @@
-def make_album(artist_name, album_title, num_tracks = ''):
+# Note UNLIKE C/C++ python programming style doesn't prefer a space before and after '=' for default parameters.
+def make_album(artist_name, album_title, num_tracks=''):
     album = {'name' : artist_name, 'title' : album_title}
     if num_tracks:
         album['tracks'] = num_tracks
