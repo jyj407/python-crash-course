@@ -17,8 +17,9 @@ class User():
 class Admin(User):
     """A simply attempt to model an admin user."""
 
-    def __init__(self, first_name, last_name, age):
+    def __init__(self, first_name, last_name, age, privileges):
         super().__init__(first_name, last_name, age)
+        self.privileges = Privileges(privileges)
 
 class Privileges:
     """A simply attempt to model the privileges an admin user can have."""
@@ -37,8 +38,7 @@ user1.describe_user()
 user1.greet_user()
 
 privileges = ["Can add post", "Can delete post", "Can ban user"]
-admin_privileges = Privileges(privileges)
-user2 = Admin("Mouni", "Sijia", "36000000")
+user2 = Admin("Mouni", "Sijia", "36000000", privileges)
 user2.describe_user()
 user2.greet_user()
-admin_privileges.show_privileges()
+user2.privileges.show_privileges()
