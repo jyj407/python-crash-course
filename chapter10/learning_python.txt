@@ -1,6 +1,6 @@
-list
-function
-class
-inheritence
-module
-file access
+python list
+python function
+python class
+python inheritence
+python module
+python python file access
