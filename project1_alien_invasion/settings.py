@@ -10,3 +10,6 @@ class Settings():
         #self.bg_color = (0, 255, 0) # RGB -- Green 
         #self.bg_color = (0, 0, 255) # RGB -- Blue
         self.bg_color = (230, 230, 230)
+
+        # Ship settings
+        self.ship_speed_factor = 1.5
