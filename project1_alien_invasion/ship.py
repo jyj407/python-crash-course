@@ -25,11 +25,13 @@ class Ship():
     def update(self):
         """Update the ship's position based on the movement flag."""
         # Update the ship's center value, not the rect.
-        if self.moving_right:
+        # Check the right of ship is within the right boundary of the display screen.
+        if self.moving_right and self.rect.right < self.screen_rect.right:
             self.center += self.ai_settings.ship_speed_factor
         # Note here we use another if instead of elif so that the ship stands still
         # when both the left and right keys are pressed down simultaneously.
-        if self.moving_left:
+        # Check the left of ship is within the left boundary of the display screen.
+        if self.moving_left and self.rect.left > self.screen_rect.left:
             self.center -= self.ai_settings.ship_speed_factor
 
         # Update rect object from self.center.
