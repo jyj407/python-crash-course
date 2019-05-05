@@ -2,14 +2,14 @@ import sys
 import pygame
 from bullet import Bullet
 
-def check_keydown_events(event, ai_settings, screen, ship, bullets):
+def check_keybottom_events(event, ai_settings, screen, ship, bullets):
     """Respond to keypresses."""
-    if event.key == pygame.K_RIGHT:
-        # MOVE the ship to the right.
-        ship.moving_right = True
-    elif event.key == pygame.K_LEFT:
-        # MOVE the ship to the left.
-        ship.moving_left = True
+    if event.key == pygame.K_k:
+        # MOVE the ship to the bottom.
+        ship.moving_bottom = True
+    elif event.key == pygame.K_j:
+        # MOVE the ship to the top.
+        ship.moving_top = True
     elif event.key == pygame.K_SPACE:
         fire_bullet(ai_settings, screen, ship, bullets)
 
@@ -22,10 +22,10 @@ def fire_bullet(ai_settings, screen, ship, bullets):
  
 def check_keyup_events(event, ship):
     """Respond to keypresses."""
-    if event.key == pygame.K_RIGHT:
-        ship.moving_right = False
-    elif event.key == pygame.K_LEFT:
-        ship.moving_left = False
+    if event.key == pygame.K_k:
+        ship.moving_bottom = False
+    elif event.key == pygame.K_j:
+        ship.moving_top = False
 
 def check_events(ai_settings, screen, ship, bullets):
     """Respond to keypresses and mouse events."""
@@ -33,17 +33,17 @@ def check_events(ai_settings, screen, ship, bullets):
         if event.type == pygame.QUIT:
             sys.exit()
         elif event.type == pygame.KEYDOWN:
-            check_keydown_events(event, ai_settings, screen, ship, bullets)
+            check_keybottom_events(event, ai_settings, screen, ship, bullets)
         elif event.type == pygame.KEYUP:
             check_keyup_events(event, ship)
 
-def update_bullets(bullets):
+def update_bullets(bullets, ai_settings):
     """Update position of bullets and get rid of old bullets."""
     bullets.update()
 
     # Get rid of bullets that have disappered.
     for bullet in bullets.copy():
-        if bullet.rect.bottom <= 0:
+        if bullet.rect.left >= ai_settings.screen_width:
             bullets.remove(bullet)
         print(len(bullets))
     
