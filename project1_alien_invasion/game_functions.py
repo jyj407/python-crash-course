@@ -12,6 +12,9 @@ def check_keydown_events(event, ai_settings, screen, ship, bullets):
         ship.moving_left = True
     elif event.key == pygame.K_SPACE:
         fire_bullet(ai_settings, screen, ship, bullets)
+    elif event.key == pygame.K_q:
+        print("Thanks for playing, see you next time!")
+        sys.exit()
 
 def fire_bullet(ai_settings, screen, ship, bullets):
     """Fire a new bullet and add it to the bullets group."""
