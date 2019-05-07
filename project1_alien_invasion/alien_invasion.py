@@ -17,7 +17,7 @@ def run_game():
     aliens = Group()
     
     # Create the fleet of aliens.
-    gf.create_fleet(ai_settings, screen, aliens)
+    gf.create_fleet(ai_settings, screen, ship, aliens)
     #pygame.display.set_caption("Alien Invasion")
     pygame.display.set_caption("星球大战")
 
