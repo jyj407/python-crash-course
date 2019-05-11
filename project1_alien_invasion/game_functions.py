@@ -105,3 +105,7 @@ def update_screen(ai_settings, screen, ship, aliens, bullets):
 
     # Make the most recently drawn screen visible.
     pygame.display.flip()
+
+def update_aliens(aliens):
+    """Update the positions of all aliens in the fleet."""
+    aliens.update()
