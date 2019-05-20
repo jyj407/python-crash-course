@@ -3,7 +3,7 @@ from random import choice
 class RandomWalk():
     """A class to generate random walks."""
 
-    def __init__(self, num_points=5000):
+    def __init__(self, num_points=5000000):
         """Initialize attributes of a walk."""
         self.num_points = num_points
 
@@ -18,11 +18,11 @@ class RandomWalk():
         while len(self.x_values) < self.num_points:
             # Decide which direction to go and how far to go in that direction.
             x_direction = choice([1, -1])
-            x_distance = choice([0, 1, 2, 3, 4])
+            x_distance = choice([0, 1, 2, 3, 4, 5, 6, 7, 8])
             x_step = x_direction * x_distance
 
-            y_direction = choice([1, -1])
-            y_distance = choice([0, 1, 2, 3, 4])
+            y_direction = choice([-1, 1])
+            y_distance = choice([0, 1, 2, 3, 4, 5, 6, 7, 8])
             y_step = y_direction * y_distance
 
             # Reject moves that go nowhere.
