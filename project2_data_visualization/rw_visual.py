@@ -11,6 +11,11 @@ while True:
     # Emphasize the first and last points.
     plt.scatter(0, 0, c='green', edgecolors='none', s=100)
     plt.scatter(rw.x_values[-1], rw.y_values[-1], c='red', edgecolor='none', s=100)
+
+    # Remove the axes.
+    plt.axes().get_xaxis().set_visible(False)
+    plt.axes().get_yaxis().set_visible(False)
+
     plt.show()
 
     keep_running = input("Make another walk? (y/n)? ")
