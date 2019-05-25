@@ -1,7 +1,8 @@
 import json
 from country_codes import get_country_code
 import pygal
-from pygal.style import RotateStyle
+from pygal.style import RotateStyle as RS
+from pygal.style import LightColorizedStyle as LCS
 
 
 # Load the data into a list.
@@ -34,7 +35,7 @@ for cc, pop in cc_populations.items():
 # See how many countries are in each level.
 print(len(cc_pops_1), len(cc_pops_2), len(cc_pops_3))
 
-wm_style = RotateStyle('#336699')
+wm_style = RS('#336699', base_style=LCS)
 wm = pygal.maps.world.World(wm_style)
 wm.title = 'World Population in 2010, by Country'
 wm.add('0-10m', cc_pops_1)
