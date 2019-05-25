@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 from datetime import datetime
 
 # Get dates and high temperatures from file.
-filename = 'sitka_weather_07-2014.csv'
+filename = 'sitka_weather_2014.csv'
 with open(filename) as f:
     reader = csv.reader(f)
     header_row = next(reader)
@@ -23,7 +23,7 @@ with open(filename) as f:
     plt.plot(dates, highs, c='red')
 
     # Format plot.
-    plt.title("Daily high temperatures, July 2014", fontsize=24)
+    plt.title("Daily high temperatures - 2014", fontsize=24)
     plt.xlabel('', fontsize=16)
     # draws the date labels diagonally to prevent them from overlapping
     fig.autofmt_xdate()
