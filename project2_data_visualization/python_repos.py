@@ -19,17 +19,20 @@ print("Repositories returned:", len(repo_dicts))
 
 # Examine every repository.
 names, plot_dicts = [], []
+count = 0
 for repo_dict in repo_dicts:
-    try:
-        names.append(repo_dict['name'])
-        plot_dict = {
-            'value' : repo_dict['stargazers_count'],
-            'label' : repo_dict['description'],
-            'xlink' : repo_dict['html_url']
-        }
-        plot_dicts.append(plot_dict)
-    except AttributeError:
-        continue # Skip Error
+    names.append(repo_dict['name'])
+    plot_dict = {
+        'value' : repo_dict['stargazers_count'],
+        'label' : repo_dict['description'],
+        'xlink' : repo_dict['html_url']
+    }
+    plot_dicts.append(plot_dict)
+
+    # Only get the 10 items
+    if (count > 10):
+        break
+    count += 1
 
 # Make visualization.
 my_style = LS('#333366', base_style=LCS)
